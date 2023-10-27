@@ -8,7 +8,7 @@ int main()
 {
 
     int x = 7;
-    std::cout << "안녕하세요 C++의 세계에 오신것을 환영합니다!\n";
+    std::cout << "안녕하세요 C++의 세계에 오신것을 열렬히 환영합니다!\n";
     printf("안녕하세요 C++의 세계에 오신것을 환영합니다\n");
     std::cout << SQUARE(5) << std::endl;
     printf("%d의 제곱 : %d\n", x,SQUARE(x));
