@@ -23,6 +23,14 @@ public: // 접근제어지시자는 17열 아래부터인 17~25행까지 외부 
         x = x1; y = y1;
     }
     double Dist(Point p);
+    
+    int Area(Point p)
+    {
+        int w = ABS(x - p.x);
+        int h = ABS(y - p.y);
+        int a = w * h;
+        return a;
+    }
 };
 
 double Point::Dist(Point p)
@@ -62,8 +70,8 @@ int main()
     Point p1(10, 10), p2(20, 30);
     
     double d = p1.Dist(p2);
-    printf("두 점 p1(%d, %d), p2 (%d, %d)의 거리는 %.2f 입니다.\n",
-        p1.x, p1.y, p2.x, p2.y, d);
+    printf("두 점 p1(%d, %d), p2 (%d, %d)의 거리는 %.2f 입니다, 면적은 %d입니다.\n",
+        p1.x, p1.y, p2.x, p2.y, d, p2.Area(p1));
 
 
     //double d = Dist(p1, p2); //p1,p2 변수는 구조체 _Point 타입
