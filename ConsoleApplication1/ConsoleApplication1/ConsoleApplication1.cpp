@@ -1,5 +1,6 @@
-﻿#include <iostream> 
+﻿    #include <iostream> 
 
+using namespace std;
 #define SQUARE(x) ((x) + (x)) // 매크로함수 #deinfe + 함수이름 + 함수
 #define ABS(x)  (((x) < 0) ? (x)*(-1):(x))  //삼항연산자를 이용한 매크로함수 모든 인수에 괄호 사용 젓댓값 함수
 // 전역변수 / 데이터타입 (구조체)선언
@@ -18,11 +19,15 @@ public: // 접근제어지시자는 17열 아래부터인 17~25행까지 외부 
     int x;
     int y;
 
-    Point(int x1, int y1) //생성자.. 클래스 이름과 동일해야함 생성자에 접근하기위해선 접근제어지시자 public을 사용해야함
+    Point(int x1 = 0, int y1 = 0) //생성자.. 클래스 이름과 동일해야함 생성자에 접근하기위해선 접근제어지시자 public을 사용해야함
     {
         x = x1; y = y1;
+     
     }
+
     double Dist(Point p);
+    double Dist(int x1, int y1);
+    double Dist(Point p1, Point p2);
     
     int Area(Point p)
     {
@@ -33,30 +38,53 @@ public: // 접근제어지시자는 17열 아래부터인 17~25행까지 외부 
     }
 };
 
+double Point::Dist(Point p1, Point p2)
+{
+
+    int w = (p1.x - p2.x);
+    int h = (p1.y - p2.y);
+    cout << w << endl;
+    cout << h << endl;
+    double f = sqrt(w * w + h * h);
+
+    return f;
+}
+
+
+
+double Point::Dist(int x1, int y1)
+{
+    int w = (x - x1);
+    int h = (y - y1);
+
+    double e = sqrt(w * w + h * h);
+
+    return e;
+}
 double Point::Dist(Point p)
 {
     int w = (x - p.x); 
     int h = (y - p.y);
-    printf("x 값 : %d\n", x);
-    printf("p.x 값 : %d\n", p.x);
-    printf("\ny 값 : %d\n", y);
-    printf("p.y 값 : %d\n", p.y);
-    printf("\nw 값 : %d\n", w);
-    printf("h 값 : %d\n", h);
+    //printf("x 값 : %d\n", x);
+    //printf("p.x 값 : %d\n", p.x);
+    //printf("\ny 값 : %d\n", y);
+    //printf("p.y 값 : %d\n", p.y);
+    //printf("\nw 값 : %d\n", w);
+    //printf("h 값 : %d\n", h);
 
     double d = sqrt(w * w + h * h);
+
     return d; //double 타입의 d 값 리턴
 }
 int main()
 {
+    Point p1(10, 10), p2(20, 30), p3; //p1 p2 class point 의 변수
 
     //int x = 7;
     //std::cout << "안녕하세요 C++의 세계에 오신것을 열렬히 환영합니다!\n";
     //printf("안녕하세요 C++의 세계에 오신것을 환영합니다\n");
     //std::cout << SQUARE(5) << std::endl;
     //printf("%d의 제곱 : %d\n", x,SQUARE(x));
-
-    //printf("===================================\n");
 
     ////int a = -8;
     //printf("%d의 절댓값은 :%d\n", -8, ABS(-8));
@@ -67,11 +95,13 @@ int main()
     //p2.x = 20; p2.y = 30; // xy 20,30 점 찍음
     //// 두 점의 길이를 나타내는 함수?
 
-    Point p1(10, 10), p2(20, 30);
     
+    double d1 = p1.Dist(p1, p2);
+    double e1 = p3.Dist(p1, p2); //함수 호출
+    double e = p1.Dist(20, 30);
     double d = p1.Dist(p2);
-    printf("두 점 p1(%d, %d), p2 (%d, %d)의 거리는 %.2f 입니다, 면적은 %d입니다.\n",
-        p1.x, p1.y, p2.x, p2.y, d, p2.Area(p1));
+    printf("두 점 p1(%d, %d), p2 (%d, %d)의 거리는 %.2f(%.2f)(%.2f)(%.2f) 입니다, 면적은 %d입니다.\n",
+        p1.x, p1.y, p2.x, p2.y, d, e, d1,e1, p2.Area(p1));
 
 
     //double d = Dist(p1, p2); //p1,p2 변수는 구조체 _Point 타입
