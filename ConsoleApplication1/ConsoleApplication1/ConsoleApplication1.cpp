@@ -1,6 +1,12 @@
 ﻿    #include <iostream> 
 
 using namespace std;
+
+
+
+using std::cout;
+using std::cin;
+using std::endl;
 #define SQUARE(x) ((x) + (x)) // 매크로함수 #deinfe + 함수이름 + 함수
 #define ABS(x)  (((x) < 0) ? (x)*(-1):(x))  //삼항연산자를 이용한 매크로함수 모든 인수에 괄호 사용 젓댓값 함수
 // 전역변수 / 데이터타입 (구조체)선언
