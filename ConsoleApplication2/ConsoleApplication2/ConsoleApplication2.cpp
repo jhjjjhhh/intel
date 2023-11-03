@@ -52,7 +52,7 @@ int main()
 		포인터 배열은 반드시 초기화 해줘야한다. ( 동적 할당 ) 필수
 	*/
 
-	point arr[3]; //  point p1,p2,p3 와 동일하다 보면됌. 3개의 point 클래스 객체가 초기화됨.(default 초기화)
+	point arr[3]; //  point p1,p2,p3 와 동일하다 보면됌. 3개의 point 클래스 객체가 초기화됨.(default 초기화)  실변수는 . (점) 포인터는 ->
 	arr[0].SetP(10, 10);
 	arr[1].SetP(20, 30);
 	arr[2].SetP(40, 60);

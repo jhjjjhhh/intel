@@ -21,9 +21,6 @@
   <ItemGroup>
     <ClCompile Include="ConsoleApplication2.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Point.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
