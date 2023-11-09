@@ -45,8 +45,34 @@ void Point::viewP(const char *s) { //본인의 x,y 좌표를 찍어줌. //디폴트 값은 pro
 double Point3D::Dist3D(Point3D p) { //Distance 3D
 
 	int w = X() - p.X(); //class point에서 멤버변수 x,y가 public 이여야 접근한다.
-	int h = y - p.y;
+	int h = Y() - p.Y();
 	int d = z - p.z;
 	
 	return sqrt(w * w + h * h + d * d);
+}
+
+
+Point& Point::operator+(Point p) {	//두 점 CurP와 p의 + 연산 결과를 (새로운 Point로) 반환 
+	Point* p1 = new Point(x += p.x, y += p.y); //new 키워드는 포인터 키워드이다. malloc 과 같다.
+	return *p1;
+}
+Point& Point::operator++() { //객체 선행 연산자 오버로딩
+	x++; y++;
+	return *this;
+}
+Point& Point::operator++(int) { // 객체 후행 연산자 오버로딩
+	
+	Point* p1 = new Point(x++, y++);
+	return *p1;
+}
+double Point::operator*(Point p) {
+
+	int w = x - p.x;
+	int h = y - p.y;
+	double a = w * h;
+	return ABS(a);
+}
+Point3D& Point3D::SetP(Point3D p) {
+	X() = p.X(); Y() = p.Y(); z = p.z;
+	return *this;
 }

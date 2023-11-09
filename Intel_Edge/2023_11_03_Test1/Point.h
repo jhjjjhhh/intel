@@ -3,13 +3,12 @@
 //#include <corecrt_math.h> VS IDE 어시스트 내용 /sqrt 함수 사용
 //extern double sqrt(double); //iostream 안에 포함되어있는 함수.
 #include <iostream>
-
+#define ABS(x)	(x)>0 ? (x) : (-(x))
 
 class Point
 {
 private:
 	int x;
-protected:
 	int y;
 public:
 	//int x, y;
@@ -29,6 +28,11 @@ public:
 
 	int& X() { return x; }; // private 멤버를  접근하기위해서 만드는 함수 
 	int& Y() { return y; };
+
+	Point& operator+(Point p);
+	Point& operator++(); //선행연산자
+	Point& operator++(int); //매개변수에 의미없는 값 추가 시 후행연산자.
+	double operator*(Point p);   //두개의 점이 이루는 사각형의 넓이
 };
 
 class Point3D : public Point //x , y , z 축
@@ -36,7 +40,8 @@ class Point3D : public Point //x , y , z 축
 private:
 	int z;
 public:
+	
 	Point3D(int x = 0, int y = 0, int z = 0) : Point(x, y), z(z) {}
 	double Dist3D(Point3D p);
-
+	Point3D& SetP(Point3D p);
 };
