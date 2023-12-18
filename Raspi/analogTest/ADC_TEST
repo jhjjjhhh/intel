@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#include <wiringPiI2C.h>
+#include <wiringPiSPI.h>
+#include <mcp3004.h>
+#include "lcd1602.h"
+
+#define BASE 100
+#define SPI_CH 0
+int i;
+
+void setup()
+{
+	wiringPiSetup();
+	xio = wiringPiI2CSetup(I2C_ADDR);
+
+	lcd_init();
+	mcp3004Setup(BASE, SPI_CH);
+}
+int main(){
+	setup();
+	printf("Raspberry Pi SPI ADC Program\n");
+
+	lcdClear();
+	lcdLoc(LINE1);
+	typeIn("Raspberr Pi");
+	lcdLoc(LINE2);
+	typeIn("SPI ADC Program");
+	delay(1000);
+	lcdClear();
+
+	while(1){
+		lcdLoc(LINE1);
+		typeIn("AnalogRead Test");
+		lcdLoc(LINE2);
+		typeIn("    CDS :");
+		i = analogRead(BASE + SPI_CH);
+		typeInt(i);
+		printf("CDS : %d\n",analogRead(BASE + SPI_CH));
+		delay(500);
+		lcdClear();
+	}
+	return 0;
+}
