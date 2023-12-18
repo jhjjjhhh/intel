@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <wiringPi.h>
+#include <wiringPiI2C.h>
+#include "lcd1602.h"
+#include <softPwm.h>
+
+const int pinLed = 23;
+
+#define row 3
+#define col 3
+int CNUM[] = {26, 19, 13};
+int RNUM[] = {12, 16, 20};
+
+char CT[row][col] = {
+	{'1','2','3'},
+	{'4','5','6'},
+	{'7','8','9'}
+};
+
+void setup();
+void keypad();
+void calculator(char key);
+
+void setup()
+{
+	wiringPiSetupGpio();
+	xio = wiringPiI2CSetup(I2C_ADDR);
+	lcd_init();
+	for(int i =0; i< 3; i++)
+	{
+		pinMode(RNUM[i],OUTPUT);
+		pinMode(CNUM[i],INPUT);
+		pullUpDnControl(CNUM[i],PUD_UP);
+		digitalWrite(RNUM[i],HIGH);
+	}
+	pinMode(pinLed,OUTPUT);
+	softPwmCreate(pinLed,0,255);
+}
+
+int main(){
+	setup();
+	while(1){
+		keypad();
+	}
+	return 0;
+}
+
+
+void keypad()
+{
+	for(int i =0; i<4;i++){
+		digitalWrite(RNUM[i],LOW);
+		if(digitalRead(RNUM[i]) == LOW){
+			for(int j = 0; j <4; j++){
+				if(digitalRead(CNUM[j]) == LOW){
+					calculator(CT[i][j]);
+				}
+			}
+			delay(45);
+		}
+		digitalWrite(RNUM[i],HIGH);
+	}
+}
+void calculator(char key)
+{
+	int level = 255/9;
+	switch(key){
+		case '1':
+			softPwmWrite(pinLed,level*1);
+			printf("1level LED TEST\n");
+			printf("ADC : %d\n",level);
+			break;
+		case '2':
+			softPwmWrite(pinLed,level*2);
+			printf("2level LED TEST\n");
+			printf("ADC : %d\n",level*2);
+			break;
+		case '3':
+			softPwmWrite(pinLed,level*3);
+			printf("3level LED TEST\n");
+			printf("ADC : %d\n",level*3);
+			break;
+		case '4':
+			softPwmWrite(pinLed,level*4);
+			printf("4level LED TEST\n");
+			printf("ADC : %d\n",level*4);
+			break;
+		case '5':
+			softPwmWrite(pinLed,level*5);
+			printf("5level LED TEST\n");
+			printf("ADC : %d\n",level*5);
+			break;
+		case '6':
+			softPwmWrite(pinLed,level*6);
+			printf("6level LED TEST\n");
+			printf("ADC : %d\n",level*6);
+			break;
+		case '7':
+			softPwmWrite(pinLed,level*7);
+			printf("7level LED TEST\n");
+			printf("ADC : %d\n",level*7);
+			break;
+		case '8':
+			softPwmWrite(pinLed,level*8);
+			printf("8level LED TEST\n");
+			printf("ADC : %d\n",level*8);
+			break;
+		case '9':
+			softPwmWrite(pinLed,level*9);
+			printf("9level LED TEST\n");
+			printf("ADC : %d\n",level*9);
+			break;
+	}
+}
