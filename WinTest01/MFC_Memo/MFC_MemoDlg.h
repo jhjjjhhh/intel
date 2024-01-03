@@ -8,7 +8,10 @@
 // CMFCMemoDlg 대화 상자
 class CMFCMemoDlg : public CDialogEx
 {
+<<<<<<< HEAD
 	int mEncoding = 0; // 0 : ANSI , 1 = UTF 8
+=======
+>>>>>>> MFC 2일차
 // 생성입니다.
 public:
 	CMFCMemoDlg(CWnd* pParent = nullptr);	// 표준 생성자입니다.
@@ -25,7 +28,10 @@ public:
 // 구현입니다.
 protected:
 	HICON m_hIcon;
+<<<<<<< HEAD
 	HACCEL mAccel;
+=======
+>>>>>>> MFC 2일차
 
 	// 생성된 메시지 맵 함수
 	virtual BOOL OnInitDialog();
@@ -37,6 +43,7 @@ public:
 	afx_msg void OnEnChangeEdit1();
 	afx_msg void OnMenuOpen();
 	afx_msg void OnMenuAbout();
+<<<<<<< HEAD
 	void AddText(CString s);
 	afx_msg void OnMenuFind();
 	CEdit mEditMemo;
@@ -49,4 +56,6 @@ public:
 	afx_msg void OnMenuAnsi();
 	afx_msg void OnMenuReplace();
 	afx_msg void OnButton1();
+=======
+>>>>>>> MFC 2일차
 };

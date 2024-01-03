@@ -5,6 +5,7 @@ class CmfcFindDlg :
 {
 public:
     CString mStr = "";
+<<<<<<< HEAD
     CString mStr2 = "";
     CmfcFindDlg();
     
@@ -19,5 +20,11 @@ public:
     DECLARE_MESSAGE_MAP()
 
     virtual BOOL PreTranslateMessage(MSG* pMsg);
+=======
+    
+    DECLARE_MESSAGE_MAP()
+    afx_msg void OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags);
+    virtual BOOL OnInitDialog();
+>>>>>>> MFC 2일차
 };
 

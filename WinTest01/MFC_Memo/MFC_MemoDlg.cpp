@@ -8,7 +8,10 @@
 #include "MFC_Memo.h"
 #include "MFC_MemoDlg.h"
 #include "afxdialogex.h"
+<<<<<<< HEAD
 #include "CmfcFindDlg.h"
+=======
+>>>>>>> MFC 2일차
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -64,13 +67,17 @@ CMFCMemoDlg::CMFCMemoDlg(CWnd* pParent /*=nullptr*/)
 void CMFCMemoDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+<<<<<<< HEAD
 	DDX_Control(pDX, IDC_EDIT_MEMO, mEditMemo);
+=======
+>>>>>>> MFC 2일차
 }
 
 BEGIN_MESSAGE_MAP(CMFCMemoDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+<<<<<<< HEAD
 	ON_EN_CHANGE(IDC_EDIT_MEMO, &CMFCMemoDlg::OnEnChangeEdit1)
 	ON_COMMAND(ID_Menu_Open, &CMFCMemoDlg::OnMenuOpen)
 	ON_COMMAND(ID_Menu_About, &CMFCMemoDlg::OnMenuAbout)
@@ -80,6 +87,11 @@ BEGIN_MESSAGE_MAP(CMFCMemoDlg, CDialogEx)
 	ON_COMMAND(ID_Menu_ANSI, &CMFCMemoDlg::OnMenuAnsi)
 	ON_COMMAND(ID_Menu_Replace, &CMFCMemoDlg::OnMenuReplace)
 	ON_COMMAND(IDC_BUTTON1, &CMFCMemoDlg::OnButton1)
+=======
+	ON_EN_CHANGE(IDC_EDIT1, &CMFCMemoDlg::OnEnChangeEdit1)
+	ON_COMMAND(ID_Menu_Open, &CMFCMemoDlg::OnMenuOpen)
+	ON_COMMAND(ID_Menu_About, &CMFCMemoDlg::OnMenuAbout)
+>>>>>>> MFC 2일차
 END_MESSAGE_MAP()
 
 
@@ -115,7 +127,10 @@ BOOL CMFCMemoDlg::OnInitDialog()  // <- main class
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+<<<<<<< HEAD
 	mAccel = LoadAccelerators(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDR_ACCEL1));
+=======
+>>>>>>> MFC 2일차
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -196,6 +211,7 @@ void CMFCMemoDlg::OnMenuOpen() //file open menu 처리기
 	if (!GetOpenFileName(&ofn)) return;
 
 	str = buf; //CString <== WCHAR, CString <== char
+<<<<<<< HEAD
 
 
 	/* C 언어 표준 함수 ANSI encoding 방법*/
@@ -222,6 +238,28 @@ void CMFCMemoDlg::OnMenuOpen() //file open menu 처리기
 			str += buf1; str += "\r\n";
 			GetDlgItem(IDC_EDIT1)->SetWindowText(str);*/
 		}
+=======
+	
+
+	/* C 언어 표준 함수 ANSI encoding 방법*/
+	//FILE* fp = fopen(fName, "rb");
+	//while (fgets(buf, 512, fp))
+	//{
+	//	((CEdit *)GetDlgItem(IDC_EDIT1))->GetWindowText(str);
+	//	GetDlgItem(IDC_EDIT1)->SetWindowText(str + buf);
+	//}
+
+	/* C++ 언어 Stream 표준 UTF-8 encoding 방법 */
+	wchar_t buf1[512];
+	std::locale::global(std::locale(".UTF-8"));
+	std::wifstream ff(fName);
+	//ff.open(fName);
+	for (; ff.getline(buf1, 512);)
+	{
+		((CEdit*)GetDlgItem(IDC_EDIT1))->GetWindowText(str);
+		str += buf1; str += "\r\n";
+		GetDlgItem(IDC_EDIT1)->SetWindowText(str);
+>>>>>>> MFC 2일차
 	}
 	// 1. open 2. Read / Write 3. close 
 	// 표준함수 fopen Func : agument 1. file 경로 2. open Mode (읽기,쓰기)
@@ -230,6 +268,7 @@ void CMFCMemoDlg::OnMenuOpen() //file open menu 처리기
 }
 
 
+<<<<<<< HEAD
 void CMFCMemoDlg::AddText(CString s) {
 	
 	CString str;
@@ -237,6 +276,9 @@ void CMFCMemoDlg::AddText(CString s) {
 	str += s;
 	GetDlgItem(IDC_EDIT_MEMO)->SetWindowText(str);
 }
+=======
+
+>>>>>>> MFC 2일차
 
 
 void CMFCMemoDlg::OnMenuAbout()
@@ -244,6 +286,7 @@ void CMFCMemoDlg::OnMenuAbout()
 	CAboutDlg dlg;
 	dlg.DoModal();
 }
+<<<<<<< HEAD
 
 
 
@@ -338,3 +381,5 @@ void CMFCMemoDlg::OnButton1()
 {
 
 }
+=======
+>>>>>>> MFC 2일차

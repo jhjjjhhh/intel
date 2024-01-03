@@ -8,12 +8,19 @@
 #define IDD_MFC_MEMO_DIALOG             102
 #define IDR_MAINFRAME                   128
 #define IDR_MENU1                       130
+<<<<<<< HEAD
 #define IDD_FIND_DIALOG                 131
 #define IDR_ACCEL1                      133
 #define IDC_EDIT_MEMO                   1000
 #define IDC_EDIT1                       1004
 #define IDC_EDIT_Replace                1004
 #define IDC_BUTTON1                     1005
+=======
+#define IDD_DIALOG1                     131
+#define IDD_FIND_DIALOG                 131
+#define IDC_EDIT1                       1000
+#define IDC_EDIT_FIND                   1001
+>>>>>>> MFC 2일차
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -33,6 +40,7 @@
 #define ID_32787                        32787
 #define ID_Menu_Replace                 32788
 #define ID_Menu_Find                    32789
+<<<<<<< HEAD
 #define ID_32790                        32790
 #define ID_32791                        32791
 #define ID_Menu_NextFind                32792
@@ -40,14 +48,22 @@
 #define ID_32796                        32796
 #define ID_Menu_UTF8                    32797
 #define ID_Menu_ANSI                    32798
+=======
+>>>>>>> MFC 2일차
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
+<<<<<<< HEAD
 #define _APS_NEXT_RESOURCE_VALUE        134
 #define _APS_NEXT_COMMAND_VALUE         32799
 #define _APS_NEXT_CONTROL_VALUE         1006
+=======
+#define _APS_NEXT_RESOURCE_VALUE        133
+#define _APS_NEXT_COMMAND_VALUE         32790
+#define _APS_NEXT_CONTROL_VALUE         1002
+>>>>>>> MFC 2일차
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
