@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFCTest01", "MFCTest01\MFCTest01.vcxproj", "{91AACAEE-DE90-44A2-A0B9-925FDAB7EA59}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MFC_Memo", "MFC_Memo\MFC_Memo.vcxproj", "{49E0F33C-973A-45A3-B72C-3611DDA1DB68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{91AACAEE-DE90-44A2-A0B9-925FDAB7EA59}.Release|x64.Build.0 = Release|x64
 		{91AACAEE-DE90-44A2-A0B9-925FDAB7EA59}.Release|x86.ActiveCfg = Release|Win32
 		{91AACAEE-DE90-44A2-A0B9-925FDAB7EA59}.Release|x86.Build.0 = Release|Win32
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Debug|x64.ActiveCfg = Debug|x64
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Debug|x64.Build.0 = Debug|x64
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Debug|x86.ActiveCfg = Debug|Win32
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Debug|x86.Build.0 = Debug|Win32
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Release|x64.ActiveCfg = Release|x64
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Release|x64.Build.0 = Release|x64
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Release|x86.ActiveCfg = Release|Win32
+		{49E0F33C-973A-45A3-B72C-3611DDA1DB68}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
