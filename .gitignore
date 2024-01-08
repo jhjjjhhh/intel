@@ -87,6 +87,7 @@
 /WinTest01/x64/Debug
 /WinTest01/MFC_Memo/x64/Debug
 <<<<<<< HEAD
+<<<<<<< HEAD
 /WinTest01/MFC_Memo/res
 =======
 >>>>>>> MFC 2일차 메모장 , 추가 Dialog
@@ -96,3 +97,13 @@
 /WinFormCS/CSTest01/bin/Debug
 /WinFormCS/CSTest01/obj/Debug
 /WinFormCS/WinFormCS/obj/Debug
+=======
+/WinFormCS/.vs/WinFormCS/FileContentIndex
+/WinFormCS/CSconApp01/bin/Debug
+/WinFormCS/CSconApp01/obj/Debug
+/WinFormCS/CSconApp01/Properties
+/WinFormCS/CSTest01/bin/Debug
+/WinFormCS/CSTest01/obj/Debug
+/WinFormCS/.vs/WinFormCS/v17
+>>>>>>> C#
+/.gitignore
