@@ -51,6 +51,7 @@
             this.menuUTF8 = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuABOUT = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.sbSTRIP.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -157,8 +158,9 @@
             // menuSAVE
             // 
             this.menuSAVE.Name = "menuSAVE";
-            this.menuSAVE.Size = new System.Drawing.Size(103, 22);
+            this.menuSAVE.Size = new System.Drawing.Size(180, 22);
             this.menuSAVE.Text = "Save";
+            this.menuSAVE.Click += new System.EventHandler(this.menuSAVE_Click);
             // 
             // menuEXIT
             // 
@@ -234,8 +236,13 @@
             // menuABOUT
             // 
             this.menuABOUT.Name = "menuABOUT";
-            this.menuABOUT.Size = new System.Drawing.Size(107, 22);
+            this.menuABOUT.Size = new System.Drawing.Size(180, 22);
             this.menuABOUT.Text = "About";
+            this.menuABOUT.Click += new System.EventHandler(this.menuABOUT_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.FileName = "saveFileDialog1";
             // 
             // frmBase
             // 
@@ -284,6 +291,7 @@
         private System.Windows.Forms.ToolStripMenuItem menuUTF8;
         private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuABOUT;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

@@ -25,7 +25,22 @@ namespace WindowsFormsApp2
         {
             menuOPEN_Click(sender, e);
         }
+        string ReadBuf;
+        Encoding enc = Encoding.UTF8; //windows 기본 엔코딩
+        private void menuSAVE_Click(object sender, EventArgs e)
+        {
+            DialogResult ret = saveFileDialog1.ShowDialog(); // c++ 에선 DoModal 사용
+            if (ret == DialogResult.OK)
+            {
+                string fn = saveFileDialog1.FileName;
+                FileStream fs = new FileStream(fn, FileMode.Create);
+                StreamWriter sw = new StreamWriter(fs,enc);
+                sw.Write(tBMEMO.Text);
+                sw.Close();
+                fs.Close();
 
+            }
+        }
         private void menuOPEN_Click(object sender, EventArgs e)
         {
             DialogResult ret = openFileDialog1.ShowDialog(); // c++ 에선 DoModal 사용
@@ -33,8 +48,11 @@ namespace WindowsFormsApp2
             {
                 string fn = openFileDialog1.FileName;
                 FileStream fs = new FileStream(fn, FileMode.Open);
-                StreamReader sr = new StreamReader(fs);
+                StreamReader sr = new StreamReader(fs,enc);
                 tBMEMO.Text = sr.ReadToEnd();
+                sr.Close();
+                fs.Close();
+
                 //while (true)
                 //{
                 //    string str = sr.ReadLine(); // fget와 유사 -> 일정한 버퍼안에 데이터를 읽어들이고 버퍼 사이즈를 넘어가면 잘리고 개행까지 읽어준다.
@@ -43,12 +61,14 @@ namespace WindowsFormsApp2
                 //}
             }
         }
-
         private void menuANSI_Click(object sender, EventArgs e)
         {
-            sbLabel1.Text = "Mode : ANSI";
+            sbLabel1.Text = "Mode: ANSI";
             menuANSI.Checked = true;
             menuUTF8.Checked = false;
+            enc = Encoding.Default;
+             
+            
         }
 
         private void menuUTF8_Click(object sender, EventArgs e)
@@ -56,6 +76,20 @@ namespace WindowsFormsApp2
             sbLabel1.Text = "Mode : UTF-8";
             menuANSI.Checked = false;
             menuUTF8.Checked = true;
+            enc = Encoding.UTF8;
+        }
+
+        private void menuABOUT_Click(object sender, EventArgs e)
+        {
+            string s;
+            frmAbout frm = new frmAbout();
+            DialogResult r = frm.ShowDialog();
+            if (r == DialogResult.OK)
+            {
+                s = "About...OK";
+            }
+            else s = "About...Cancel";
+            sbLabel2.Text = s;
         }
     }
 }
