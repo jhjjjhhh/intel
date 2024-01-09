@@ -46,7 +46,10 @@ namespace CSconApp01
         {
             char[] carr = { '안', '녕', '하', '셈', '?' };  //new int[100];
             char a1 = carr[0];
-            
+            char a2 = carr[0];
+            char a3 = carr[0];
+            char a4 = carr[0];
+
             for (int i = 0; i < carr.Length; i++)
             {
                 Console.Write(carr[i]);
