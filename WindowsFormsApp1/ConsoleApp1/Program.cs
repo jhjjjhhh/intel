@@ -45,10 +45,11 @@ namespace CSconApp01
         void func4() // 배열 (Array)
         {
             char[] carr = { '안', '녕', '하', '셈', '?' };  //new int[100];
+            char a1 = carr[0];
+            
             for (int i = 0; i < carr.Length; i++)
             {
                 Console.Write(carr[i]);
-
             }
             Console.WriteLine("");
             string s = new string(carr); Console.WriteLine(s);
