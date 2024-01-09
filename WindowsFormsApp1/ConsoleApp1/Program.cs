@@ -48,6 +48,7 @@ namespace CSconApp01
             for (int i = 0; i < carr.Length; i++)
             {
                 Console.Write(carr[i]);
+
             }
             Console.WriteLine("");
             string s = new string(carr); Console.WriteLine(s);
