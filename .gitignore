@@ -109,3 +109,4 @@
 /.gitignore
 /WinFormCS/CSconApp01/Program.cs
 /.gitignore
+*.vsidx
