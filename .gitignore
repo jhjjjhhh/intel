@@ -145,3 +145,4 @@
 /WindowsFormsApp1/WinFormTest02-DBM/Properties
 *.mdf
 *.sql
+*.ldf
