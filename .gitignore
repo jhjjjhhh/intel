@@ -143,3 +143,4 @@
 /WindowsFormsApp1/WinFormTest02-DBM/bin/Debug
 /WindowsFormsApp1/WinFormTest02-DBM/obj/Debug
 /WindowsFormsApp1/WinFormTest02-DBM/Properties
+*.mdf
