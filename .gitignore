@@ -146,3 +146,13 @@
 *.mdf
 *.sql
 *.ldf
+/WinFormCS/WinFormTest02-DBM/obj/Debug
+/WinFormCS/WinFormTest01-Base/obj/Debug
+/WinFormCS/WinFormTest03-Paint/bin/Debug
+/WinFormCS/WinFormTest03-Paint/obj/Debug
+/WinFormCS/WinFormTest02-DBM/bin/Debug
+/WinFormCS/WinFormTest01-Base/Resources
+/WinFormCS/CSTest01/Properties
+/WinFormCS/WinFormTest01-Base/Properties
+/WinFormCS/WinFormTest02-DBM/Properties
+/WinFormCS/WinFormTest03-Paint/Properties
